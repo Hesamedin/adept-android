@@ -1,5 +1,4 @@
-package info.adavis.adeptandroid.models;
-
+package kian.mobilesoft.retrofit2.models;
 
 public class Book {
 

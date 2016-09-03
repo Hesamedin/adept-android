@@ -1,7 +1,6 @@
-package info.adavis.adeptandroid.books;
+package kian.mobilesoft.retrofit2.books;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,10 +13,10 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import info.adavis.adeptandroid.R;
-import info.adavis.adeptandroid.book.BookActivity;
-import info.adavis.adeptandroid.di.Injector;
-import info.adavis.adeptandroid.models.Book;
+import kian.mobilesoft.retrofit2.R;
+import kian.mobilesoft.retrofit2.book.BookActivity;
+import kian.mobilesoft.retrofit2.di.Injector;
+import kian.mobilesoft.retrofit2.models.Book;
 import timber.log.Timber;
 
 public class BooksActivity extends AppCompatActivity implements BooksContract.View

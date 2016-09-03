@@ -1,7 +1,7 @@
-package info.adavis.adeptandroid.book;
+package kian.mobilesoft.retrofit2.book;
 
-import info.adavis.adeptandroid.data.BookService;
-import info.adavis.adeptandroid.models.Book;
+import kian.mobilesoft.retrofit2.data.BookService;
+import kian.mobilesoft.retrofit2.models.Book;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -1,4 +1,4 @@
-package info.adavis.adeptandroid.book;
+package kian.mobilesoft.retrofit2.book;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +8,9 @@ import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import info.adavis.adeptandroid.R;
-import info.adavis.adeptandroid.di.Injector;
-import info.adavis.adeptandroid.models.Book;
+import kian.mobilesoft.retrofit2.R;
+import kian.mobilesoft.retrofit2.di.Injector;
+import kian.mobilesoft.retrofit2.models.Book;
 
 public class BookActivity extends AppCompatActivity implements BookContract.View
 {

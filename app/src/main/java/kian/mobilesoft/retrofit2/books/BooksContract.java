@@ -1,8 +1,8 @@
-package info.adavis.adeptandroid.books;
+package kian.mobilesoft.retrofit2.books;
 
 import java.util.List;
 
-import info.adavis.adeptandroid.models.Book;
+import kian.mobilesoft.retrofit2.models.Book;
 
 /**
  * The contract between the view and presenter

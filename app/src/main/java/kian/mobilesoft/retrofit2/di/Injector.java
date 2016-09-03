@@ -1,13 +1,10 @@
-package info.adavis.adeptandroid.di;
+package kian.mobilesoft.retrofit2.di;
 
-import info.adavis.adeptandroid.Constants;
-import info.adavis.adeptandroid.data.BookService;
+import kian.mobilesoft.retrofit2.Constants;
+import kian.mobilesoft.retrofit2.data.BookService;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * @author Annyce Davis
- */
 public class Injector
 {
     public static Retrofit provideRetrofit (String baseUrl)
