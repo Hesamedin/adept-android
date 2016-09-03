@@ -1,4 +1,4 @@
-package info.adavis.adeptandroid;
+package kian.mobilesoft.retrofit2;
 
 import android.app.Application;
 
