@@ -7,15 +7,13 @@ import kian.mobilesoft.retrofit2.models.Book;
 /**
  * The contract between the view and presenter
  */
-public interface BooksContract
-{
+public interface BooksContract {
 
-    interface View
-    {
+    interface View {
 
-        void showBooks (List<Book> books);
+        void showBooks(List<Book> books);
 
-        void showErrorMessage ();
+        void showErrorMessage();
     }
 
 }

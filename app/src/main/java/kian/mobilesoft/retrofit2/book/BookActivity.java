@@ -12,46 +12,41 @@ import kian.mobilesoft.retrofit2.R;
 import kian.mobilesoft.retrofit2.di.Injector;
 import kian.mobilesoft.retrofit2.models.Book;
 
-public class BookActivity extends AppCompatActivity implements BookContract.View
-{
+public class BookActivity extends AppCompatActivity implements BookContract.View {
     public static final String EXTRA_BOOK_ID = "EXTRA_BOOK_ID";
 
-    @Bind( R.id.titleText )
+    @Bind(R.id.titleText)
     TextView titleText;
 
-    @Bind( R.id.authorText )
+    @Bind(R.id.authorText)
     TextView authorText;
 
     @Override
-    protected void onCreate (Bundle savedInstanceState)
-    {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_book );
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_book);
 
-        ButterKnife.bind( this );
+        ButterKnife.bind(this);
 
-        BookPresenter bookPresenter = new BookPresenter( this, Injector.provideBookService() );
+        BookPresenter bookPresenter = new BookPresenter(this, Injector.provideBookService());
         bookPresenter.retrieveBook(getIntent().getLongExtra(EXTRA_BOOK_ID, 1));
 
         configureLayout();
     }
 
     @Override
-    public void showBook (Book book)
-    {
-        titleText.setText( book.getTitle() );
-        authorText.setText( book.getAuthor() );
+    public void showBook(Book book) {
+        titleText.setText(book.getTitle());
+        authorText.setText(book.getAuthor());
     }
 
     @Override
-    public void showErrorMessage ()
-    {
-        Toast.makeText( this, R.string.book_loading_unsuccessful, Toast.LENGTH_SHORT).show();
+    public void showErrorMessage() {
+        Toast.makeText(this, R.string.book_loading_unsuccessful, Toast.LENGTH_SHORT).show();
     }
 
-    private void configureLayout ()
-    {
-        setSupportActionBar( (Toolbar) ButterKnife.findById( this, R.id.toolbar ) );
+    private void configureLayout() {
+        setSupportActionBar((Toolbar) ButterKnife.findById(this, R.id.toolbar));
     }
 
 }

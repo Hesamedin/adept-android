@@ -1,5 +1,7 @@
 package kian.mobilesoft.retrofit2.books;
 
+import com.squareup.picasso.Picasso;
+
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
@@ -25,33 +25,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
     private List<Book> books;
     private BookItemListener itemListener;
 
-    public class ViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener {
-
-        @Bind(R.id.titleTextView) TextView titleTextView;
-        @Bind(R.id.authorTextView) TextView authorTextView;
-        @Bind(R.id.publishedTextView) TextView publishedTextView;
-        @Bind(R.id.pagesTextView) TextView pagesTextView;
-        @Bind(R.id.imageView) ImageView imageView;
-
-        BookItemListener itemListener;
-
-        public ViewHolder(View v, BookItemListener itemListener) {
-            super(v);
-            ButterKnife.bind(this, v);
-
-            this.itemListener = itemListener;
-            v.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick (View v)
-        {
-            Book book = getItem(getAdapterPosition());
-            this.itemListener.onBookClick( book.getId() );
-        }
-    }
-
-    public BooksAdapter (Context context, List<Book> books, BookItemListener itemListener) {
+    public BooksAdapter(Context context, List<Book> books, BookItemListener itemListener) {
         this.context = new WeakReference<>(context);
         this.books = books;
         this.itemListener = itemListener;
@@ -104,5 +78,35 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
 
     public interface BookItemListener {
         void onBookClick(long id);
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+        @Bind(R.id.titleTextView)
+        TextView titleTextView;
+        @Bind(R.id.authorTextView)
+        TextView authorTextView;
+        @Bind(R.id.publishedTextView)
+        TextView publishedTextView;
+        @Bind(R.id.pagesTextView)
+        TextView pagesTextView;
+        @Bind(R.id.imageView)
+        ImageView imageView;
+
+        BookItemListener itemListener;
+
+        public ViewHolder(View v, BookItemListener itemListener) {
+            super(v);
+            ButterKnife.bind(this, v);
+
+            this.itemListener = itemListener;
+            v.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Book book = getItem(getAdapterPosition());
+            this.itemListener.onBookClick(book.getId());
+        }
     }
 }

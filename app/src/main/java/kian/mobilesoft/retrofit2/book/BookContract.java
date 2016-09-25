@@ -5,13 +5,13 @@ import kian.mobilesoft.retrofit2.models.Book;
 /**
  * The contract between the view and presenter
  */
-public interface BookContract
-{
-    interface View
-    {
-        void showErrorMessage ();
+public interface BookContract {
 
-        void showBook (Book book);
+    interface View {
+
+        void showBook(Book book);
+
+        void showErrorMessage();
     }
 
 }
